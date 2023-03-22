@@ -1,0 +1,12 @@
+
+<div *ngIf="bookDetails">
+    <br><br>
+    <img src="{{bookDetails.img_url}}" alt="">
+    <br><br>
+    book name: {{bookDetails.name}}
+    <br><br>
+    price: {{bookDetails.price}}
+    <br><br>
+</div>
+<button *ngIf="isUserLogin()" (click)="buyNow()" type="button" class="btn btn-danger btn-ls">Buy Now</button><br><br>
+<button *ngIf="!isUserLogin()" (click)="redirectToLogin()" type="button" class="btn btn-danger btn-ls">Login to Buy</button>

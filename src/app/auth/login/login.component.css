@@ -1,0 +1,78 @@
+.login {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    /* border: 1px solid rgba(0,0,0,.2); */
+    border-radius: 0.3rem;
+    outline: 0;
+}
+
+.model-body {
+ text-align: center;
+ /* margin: auto; */
+}
+
+form, .bottomline{
+ display: flex;
+ flex-direction: column;
+ row-gap: 20px;
+} 
+
+.model-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    /* margin-top: 50px; */
+
+} 
+
+input {
+    background: #f2f2f2;
+    outline-color: rgb(83, 171, 243);
+    /* outline: 0; */
+}
+
+button, input {
+    width: 400px;
+    border-radius: 8px;
+    padding: 5px 10px;
+    border: none;
+} 
+.btn {
+    border: none;
+}
+
+.btnrequestotp {
+    border: rgb(83, 171, 243);
+    
+}
+
+a {
+    text-decoration: none;
+    color: #08d;
+    /* cursor: pointer; */
+}
+
+.forgotpwd {
+    /* text-align: right; */
+}
+button {
+    /* outline-color: rgb(26, 66, 247); */
+}
+
+.signuplink {
+    margin-top: 10px;
+}
+
+h3 {
+    font-style: italic;
+    margin: 10px;
+}
+
+.or {
+    
+}

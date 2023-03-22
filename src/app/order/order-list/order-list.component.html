@@ -1,0 +1,32 @@
+<div class="contianer">
+    <div  *ngFor="let order of orders">
+        <!-- <img src="{{order.bookDetails[0].img_url}}" width="80px" alt="">
+        Status: {{order.status}} 
+        Total Price: {{order.totalPrice}}
+        Name: {{order.bookDetails[0].name}} -->
+        <!-- <hr> -->
+        <div class="contianer">
+            <label for="orderId">OrderId: </label>  {{order.orderId}} <br>
+            <label for="totalPrice">Total Price:</label> {{order.totalPrice}} <br>
+            <label for="status">Status: </label>  {{order.status}}
+        </div>
+        <label for="booksOrderd">Books Ordered</label><br><br>
+        <div class="orders">
+            <div class="booksOrderd"  *ngFor="let book of order.bookDetails">
+                <div class="books" >
+                    <img src="{{book.img_url}}" width="60px" alt="">
+                </div>
+                <div class="books book">
+                    <label for="">Name:</label>  {{book.name}}
+                    <label for="">price: </label>  {{book.price}}
+                    <label for="">quantity: </label>  {{book.quantity}} 
+                </div>    
+            </div>
+    
+        </div>
+                <hr>   
+    </div>
+</div>
+
+
+

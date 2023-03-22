@@ -1,0 +1,40 @@
+<div class="login">
+        
+<!-- https://d2g9wbak88g7ch.cloudfront.net/staticimages/loginbanner.png -->
+
+    <div class="model-body">
+        <div class="model-header">
+                <img class="loginbanner"  src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/loginbanner.png">
+        </div>
+            <h3 class="login">Log in</h3>
+            <form>
+                        <div>
+                                <input name="email" [(ngModel)]="email" class="email" placeholder="Email/Mobile"/>
+                        </div>
+                        <div>
+                                <input type="password" name="password" [(ngModel)]="password" class="password" placeholder="Password" />
+                        </div>
+                        <div class="forgotpwd">
+                                <a  href="#">Forgot Password?</a> 
+                        </div>
+                        <div class="btn">
+                                <button (click)="login()"  class="btnlogin">Login</button>
+                                <p class="or">Or</p>
+                                <button (click)="login()"  class="btnrequestotp">Request OTP</button>
+                        </div>
+                                
+                
+                        
+            </form>
+
+            <div class="bottomline">
+                <a href="#" class="signuplink">New to BookStore? Sign up</a>
+                <p>By continuing, I agree to the <a class="themecolor" href="#">Terms of Use</a> &amp; <a href="#" class="themecolor">Privacy Policy</a>
+                </p>
+                
+            </div>
+        
+    </div>
+
+
+</div>

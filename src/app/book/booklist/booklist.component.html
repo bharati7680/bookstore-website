@@ -1,0 +1,24 @@
+
+
+<h1 class="label">
+    <span>Best Sellers</span>
+</h1>
+<span>
+  <h5>Total Books: {{totalBooks}}</h5>
+</span>
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-3 mt-3 mb-3" *ngFor="let book of bookList">
+      <div class="box" (click)="clickBook(book)">
+        <img class="mt-2 md-2" src="{{book.img_url}}" width="80%">
+        <div class="book-name">{{book.name}}</div>
+        <div class="author-name">{{book.author}}</div>
+        <span class="price"> &#x20B9; {{book.price}}</span>
+      </div>     
+    </div>
+  </div>    
+</div>    
+      
+

@@ -1,0 +1,36 @@
+.container{
+    margin-left: 20px;
+    background-color: #f1f1f1;
+}
+
+label {
+    font-weight: 700;
+}
+
+.orders{
+    margin: 10px;
+    border: 10px solid;
+    border-color: rgb(12, 243, 166);
+}
+
+.booksOrderd{
+    display: flex;
+    /* background-color: rgb(188, 216, 243); */
+    column-gap: 10px;
+    margin: 10px;
+
+
+}
+
+.books{
+    width:80px;
+}
+
+.book {
+    width: 90px;
+}
+/* img {
+    margin-right: 15px;
+    margin-left: 15px;
+
+} */
