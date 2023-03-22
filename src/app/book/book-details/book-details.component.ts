@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { BestsellersService } from 'src/app/service/bestsellers.service';
+import { CartService } from 'src/app/service/cart.service';
 import { OrderService } from 'src/app/service/order.service';
 import { environment } from 'src/environments/environment';
 
@@ -13,11 +14,14 @@ import { environment } from 'src/environments/environment';
 export class BookDetailsComponent {
 
   bookDetails:any = null
+
+
   constructor (private route: ActivatedRoute, //  URL
     private router: Router,
     private bookService: BestsellersService, 
     private authService: AuthService,
-    private orderService: OrderService) {
+    private orderService: OrderService,
+    private cartService: CartService) {
 
   }
 
@@ -66,6 +70,18 @@ export class BookDetailsComponent {
 
   redirectToLogin() {
     this.router.navigate(['auth/login'])
+  }
+
+  addToCart() {
+    this.cartService.addBook(this.bookDetails)
+  }
+
+  removeFromCart() {
+    this.cartService.removeBook(this.bookDetails.id)
+  }
+
+  bookCount() {
+    return this.cartService.getBookQunatity(this.bookDetails.id)
   }
 
 

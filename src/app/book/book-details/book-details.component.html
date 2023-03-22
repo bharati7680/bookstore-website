@@ -7,6 +7,14 @@
     <br><br>
     price: {{bookDetails.price}}
     <br><br>
+    <div *ngIf="isUserLogin()">
+        <button *ngIf="bookCount() === 0" class="btn btn-danger" (click)="addToCart()">Add To Cart</button>
+        <div *ngIf="bookCount() > 0">
+            <button (click)="removeFromCart()" class="btn btn-danger btn-ls">-</button>
+            {{bookCount()}}
+            <button (click)="addToCart()"  class="btn btn-danger btn-ls">+</button>
+        </div>
+    </div>
+    <!-- <button *ngIf="isUserLogin()" (click)="buyNow()" type="button" class="btn btn-danger btn-ls">Buy Now</button><br><br> -->
+    <button *ngIf="!isUserLogin()" (click)="redirectToLogin()" type="button" class="btn btn-danger btn-ls">Login to Buy</button>
 </div>
-<button *ngIf="isUserLogin()" (click)="buyNow()" type="button" class="btn btn-danger btn-ls">Buy Now</button><br><br>
-<button *ngIf="!isUserLogin()" (click)="redirectToLogin()" type="button" class="btn btn-danger btn-ls">Login to Buy</button>
