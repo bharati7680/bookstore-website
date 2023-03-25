@@ -1,6 +1,6 @@
 <header class="navbar">
   <div class="container container-fluid">
-    <a class="navbar-brand">BookStore</a>
+    <a class="navbar-brand" routerLink="/">BookStore</a>
     <form role="search">
       <input 
         class="form-control"
@@ -8,10 +8,24 @@
         placeholder="Search"
         aria-label="Search"/>
       <button class="btn btn-primary" type="submit">Search</button>
-      <button type="button" class="btn btn-dark">Login</button>
-      <button type="button" class="btn btn-dark">Sign-Up</button>
-      <button  (click)="goToCart()" type="button" class="btn btn-secondary"><i class="fa fa-shopping-cart"></i>{{ getTotalBooksInCart() }}</button>
+      <div *ngIf="!isUserLogin()">
+        <button  (click)="login()" type="button" class="btn btn-dark">Login</button>
+        <button  (click)="signup()"   type="button" class="btn btn-dark">Sign-Up</button>
+      </div>
+      <div *ngIf="isUserLogin()">
+        <button  (click)="goToCart()" type="button" class="btn btn-secondary"><i class="fa fa-shopping-cart"></i>{{ getTotalBooksInCart() }}</button>
+        <div class="dropdown" style="display: inline-block">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" routerLink="/my-orders">My Orders</a></li>
+            <li><a class="dropdown-item" (click)="logOut()">Log out</a></li>
+          </ul>
+        </div>
+      </div> 
     </form>
+    
   </div>
 </header> 
   <!-- <i class="bi bi-cart-fill" (click)="goToCart()">{{ getTotalBooksInCart() }}</i> --> 

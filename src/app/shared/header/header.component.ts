@@ -1,3 +1,4 @@
+import { Token } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
@@ -22,7 +23,21 @@ export class HeaderComponent {
 
   login() {
     // this.authService.login
-    this.router.navigateByUrl('/login')
+    this.router.navigateByUrl('/auth/login')
+  }
+
+  signup() {
+    this.router.navigate(['/auth/signup'])
+  }
+
+  isUserLogin() {
+    return this.authService.isUserLogin()
+  }
+
+  logOut() {
+    this.authService.logOut()
+    window.location.reload()
+
   }
 
 }

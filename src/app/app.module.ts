@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
 import { BestsellersService} from './service/bestsellers.service'
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooklistComponent } from './book/booklist/booklist.component';
@@ -24,7 +27,9 @@ import { AuthService } from './service/auth.service';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
 
   ],
   providers: [

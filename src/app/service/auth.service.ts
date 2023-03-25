@@ -23,4 +23,8 @@ export class AuthService {
       return false
     }
   }
+
+  logOut() {
+    localStorage.removeItem("token")
+  }
 }

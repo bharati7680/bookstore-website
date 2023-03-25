@@ -18,8 +18,8 @@
                                 <a  href="#">Forgot Password?</a> 
                         </div>
                         <div class="btn">
-                                <button (click)="login()"  class="btnlogin">Login</button>
-                                <p class="or">Or</p>
+                                <button (click)="login()"  class="btnlogin" [disabled]="isLoading">Login<span *ngIf="isLoading" class="spinner-border"></span></button>
+                                <p class="or">Or</p> 
                                 <button (click)="login()"  class="btnrequestotp">Request OTP</button>
                         </div>
                                 
