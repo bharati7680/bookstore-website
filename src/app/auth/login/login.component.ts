@@ -29,7 +29,7 @@ export class LoginComponent {
       if(!result.error) {
         console.log(result.data.token)
         localStorage.setItem("token", result.data.token)
-        this.router.navigateByUrl("/")
+        this.router.navigateByUrl("/login")
       }
 
     })

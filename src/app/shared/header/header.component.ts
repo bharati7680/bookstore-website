@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { CartService } from 'src/app/service/cart.service';
 })
 export class HeaderComponent {
  
-  constructor(private cartService:CartService, private router: Router) {}
+  constructor(private cartService:CartService, private authService: AuthService, private router: Router) {}
 
   getTotalBooksInCart() {
      return this.cartService.getTotalBooks()
@@ -17,6 +18,11 @@ export class HeaderComponent {
 
   goToCart() {
     this.router.navigateByUrl('/cart')
+  }
+
+  login() {
+    // this.authService.login
+    this.router.navigateByUrl('/login')
   }
 
 }

@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-lg-3 mt-3 mb-3" *ngFor="let book of bookList">
       <div class="box" (click)="clickBook(book)">
-        <img class="mt-2 md-2" src="{{book.img_url}}" width="80%">
+        <img class="mt-2 md-2" src="{{book.img_url}}" width="70%">
         <div class="book-name">{{book.name}}</div>
         <div class="author-name">{{book.author}}</div>
         <span class="price"> &#x20B9; {{book.price}}</span>

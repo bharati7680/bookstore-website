@@ -1,1 +1,48 @@
-<p>signup works!</p>
+<div class="signup">
+        
+    <!-- https://d2g9wbak88g7ch.cloudfront.net/staticimages/loginbanner.png -->
+    
+        <div class="model-body">
+            <div class="model-header">
+                    <img class="loginbanner"  src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/loginbanner.png">
+            </div>
+                <h3 class="signup">Signup</h3>
+                <form>      
+                    <div>
+                        <label for="firstName">First Name</label>
+                        <input name="firstName" [(ngModel)]="firstName" class="fName" placeholder="First Name"/>
+                    </div>
+                    <div>
+                        <label for="LastName">Last Name</label>
+                        <input name="LastName" [(ngModel)]="lastName" class="LName" placeholder="Last Name"/>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input name="email" [(ngModel)]="email" class="email" placeholder="Email"/>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" [(ngModel)]="password" class="password" placeholder="Password" />
+                    </div>
+            
+                    <div class="btn">
+                        <button (click)="login()"  class="btnlogin">Signup</button>
+                            <p class="or">
+                                By clicking the Sign Up button,you agree to our <br />
+                                <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+                            </p>
+                                
+                    </div>
+                </form>
+    
+                <div class="bottomline">
+                    <!-- <a href="#" class="signuplink">New to BookStore? Sign up</a -->
+                    <p>By continuing, I agree to the <a class="themecolor" href="#">Terms of Use</a> &amp; <a href="#" class="themecolor">Privacy Policy</a>
+                    </p>
+                    
+                </div>
+            
+        </div>
+    
+    
+    </div>
