@@ -7,26 +7,48 @@
                     <img class="loginbanner"  src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/loginbanner.png">
             </div>
                 <h3 class="signup">Signup</h3>
-                <form>      
+                <form [formGroup]="userForm">      
                     <div>
                         <label for="firstName">First Name</label>
-                        <input name="firstName" [(ngModel)]="firstName" class="fName" placeholder="First Name"/>
+                        <input name="firstName" formControlName="first_name" class="fName" placeholder="First Name"/>
+                        <div class="error-message" *ngIf="userForm.get('first_name')!.touched && this.userForm.get('first_name')!.errors!['required']">
+                            First name is required.
+                        </div>
                     </div>
                     <div>
                         <label for="LastName">Last Name</label>
-                        <input name="LastName" [(ngModel)]="lastName" class="LName" placeholder="Last Name"/>
+                        <input name="LastName" formControlName="last_name" class="LName" placeholder="Last Name"/>
+                        <div class="error-message" *ngIf="userForm.get('last_name')!.touched && this.userForm.get('last_name')!.errors!['required']">
+                            Last name is required.
+                        </div>
+                    </div>
+                    <div>
+                        <label for="contact">Contact</label>
+                        <input name="contact" formControlName="contact" class="contact" placeholder="contact"/>
+                        <div class="error-message" *ngIf="userForm.get('contact')!.touched && this.userForm.get('contact')!.errors!['required']">
+                            Contact is required.
+                        </div>
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input name="email" [(ngModel)]="email" class="email" placeholder="Email"/>
+                        <input name="email" formControlName="email" class="email" placeholder="Email"/>
+                        <div class="error-message" *ngIf="userForm.get('email')!.touched && this.userForm.get('email')!.errors!['required']">
+                            Email is required.
+                        </div>
+                        <!-- <div class="error-message" *ngIf="userForm.get('email')!.touched && this.userForm.get('email')!.errors!['email']">
+                             Please Enter valid Email 
+                        </div> -->
                     </div>
                     <div>
                         <label for="password">Password</label>
-                        <input type="password" name="password" [(ngModel)]="password" class="password" placeholder="Password" />
+                        <input type="password" name="password" formControlName="password" class="password" placeholder="Password" />
+                        <div class="error-message" *ngIf="userForm.get('password')!.touched && this.userForm.get('password')!.errors!['required']">
+                            Password is required.
+                        </div>
                     </div>
             
                     <div class="btn">
-                        <button (click)="login()"  class="btnlogin">Signup</button>
+                        <button (click)="signup()" class="btnlogin" [disabled]="isLoading">Signup<span *ngIf="isLoading" class="spinner-border"></span></button>
                             <p class="or">
                                 By clicking the Sign Up button,you agree to our <br />
                                 <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>

@@ -9,8 +9,8 @@
         aria-label="Search"/>
       <button class="btn btn-primary" type="submit">Search</button>
       <div *ngIf="!isUserLogin()">
-        <button  (click)="login()" type="button" class="btn btn-dark">Login</button>
-        <button  (click)="signup()"   type="button" class="btn btn-dark">Sign-Up</button>
+        <button (click)="login()" type="button" class="btn btn-dark">Login</button>
+        <button (click)="signup()" type="button" class="btn btn-dark">Sign-Up</button>
       </div>
       <div *ngIf="isUserLogin()">
         <button  (click)="goToCart()" type="button" class="btn btn-secondary"><i class="fa fa-shopping-cart"></i>{{ getTotalBooksInCart() }}</button>
@@ -24,8 +24,7 @@
           </ul>
         </div>
       </div> 
-    </form>
-    
+    </form> 
   </div>
 </header> 
   <!-- <i class="bi bi-cart-fill" (click)="goToCart()">{{ getTotalBooksInCart() }}</i> --> 

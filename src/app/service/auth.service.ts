@@ -16,6 +16,19 @@ export class AuthService {
 
   }
 
+  signup(first_name:string, last_name:string, contact:string, email: string, password: string) {
+    const body = {
+      first_name,
+      last_name,
+      contact,
+      email,
+      password
+    }
+    return this.httpClient.post(`${environment.API_URL}api/auth/signup`, body)
+
+  }
+
+
   isUserLogin() {   
     if(localStorage.getItem("token")){
       return true  

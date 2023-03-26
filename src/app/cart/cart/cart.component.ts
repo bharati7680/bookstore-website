@@ -10,6 +10,8 @@ import { OrderService} from '../../service/order.service';
 })
 export class CartComponent implements OnInit {
 
+  isLoading = false;
+
   constructor(private cartService:CartService, private orderService: OrderService) { }
 
   ngOnInit(): void { }
@@ -26,21 +28,42 @@ export class CartComponent implements OnInit {
       books,
       callbackUrl: environment.CALLBACK_URL
     }
+
+    this.isLoading = true;
+
     this.orderService.initOrder(data).subscribe((result:any) => {
       console.log(result)
-
+    this.isLoading = false;
       if(!result.error) {
         console.log(result.data.paymentLink)
         window.location.href = result.data.paymentLink
       }
 
     })
+
   }
 
-  cart() {
-    let bookList
+  getBooks() {
+     return this.cartService.getBooks()
+    
   }
 
+  addBook(book:any) {
+    this.cartService.addBook(book)
+  }
+
+  removeBook(book:any) {
+    this.cartService.removeBook(book.id)
+  }
+
+  getTotalPrice() {
+    let totalPrice = 0
+
+    this.cartService.getBooks().forEach((book:any) => {
+       totalPrice += book.price * book.quantity
+    })
+    return totalPrice 
+  }
 
 
 

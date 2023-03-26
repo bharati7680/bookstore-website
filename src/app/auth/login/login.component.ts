@@ -29,8 +29,10 @@ export class LoginComponent {
     console.log(this.email, this.password)
 
     this.isLoading = true
+    
     this.authService.login(this.email, this.password).subscribe((result:any) => {
       console.log()
+
       this.isLoading = false
       if(!result.error) {
         console.log(result.data.token)
@@ -39,8 +41,6 @@ export class LoginComponent {
       } else {
         this.toastr.error(result.message)
       }
-
-
     })
   }
 

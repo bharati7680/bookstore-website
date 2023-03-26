@@ -12,7 +12,7 @@ import { BooklistComponent } from './book/booklist/booklist.component';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './service/auth.service';
 
 @NgModule({
@@ -28,6 +28,7 @@ import { AuthService } from './service/auth.service';
     HttpClientModule,
     SharedModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
 
