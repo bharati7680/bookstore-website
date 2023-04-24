@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {BestsellersService} from '../../service/bestsellers.service'
+import {BestsellersService} from '../../services/bestsellers.service'
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-booklist',
@@ -17,7 +16,7 @@ export class BooklistComponent {
   ngOnInit(): void {
     //this.getMethod();
 
-    this.bookService.booklist().subscribe((result)=>{
+    this.bookService.booklist().subscribe((result) => {
       //console.log(result);
       if(!result.error){
         console.log(result.data.books)

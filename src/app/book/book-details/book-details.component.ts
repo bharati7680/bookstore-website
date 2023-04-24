@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/service/auth.service';
-import { BestsellersService } from 'src/app/service/bestsellers.service';
-import { CartService } from 'src/app/service/cart.service';
-import { OrderService } from 'src/app/service/order.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { BestsellersService } from 'src/app/services/bestsellers.service';
+import { CartService } from 'src/app/services/cart.service';
+import { OrderService } from 'src/app/services/order.service';
 import { environment } from 'src/environments/environment';
 
 @Component({

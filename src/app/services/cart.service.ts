@@ -32,7 +32,6 @@ export class CartService {
       existingBook.quantity -= 1
     }else{
       this.books = this.books.filter((b:any) => b.id !== bookId)
-
     }    
   }
 
